@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 
 const stats = [
@@ -64,19 +65,16 @@ export default function About() {
           >
             <motion.div style={{ y: imageY }} className="relative z-10">
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden glass-card p-1">
-                <div className="w-full h-full rounded-3xl overflow-hidden bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center">
-                  {/* Profile placeholder - you can replace with actual image */}
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/30 via-purple-600/30 to-pink-600/30" />
-                    <div className="relative text-center p-8">
-                      <div className="w-32 h-32 rounded-full mx-auto mb-6 bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center">
-                        <span className="text-5xl font-bold text-white">O</span>
-                      </div>
-                      <p className="text-neutral-400 text-lg">
-                        AI Frontend Developer
-                      </p>
-                    </div>
-                  </div>
+                <div className="w-full h-full rounded-3xl overflow-hidden relative">
+                  <Image
+                    src="/images/osarodev.jpeg"
+                    alt="osaroDEV - AI Frontend Developer"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  {/* Gradient overlay for aesthetic effect */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/60 via-transparent to-transparent" />
                 </div>
               </div>
 
