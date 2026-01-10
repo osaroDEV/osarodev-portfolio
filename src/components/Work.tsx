@@ -2,6 +2,7 @@
 
 import { projects as allProjects, categories } from "@/data/projects";
 import { AnimatePresence, motion, useInView } from "framer-motion";
+import Link from "next/link";
 import { useRef, useState } from "react";
 
 // Only show first 4 projects as featured
