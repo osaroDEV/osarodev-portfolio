@@ -82,93 +82,98 @@ export default function Work() {
                 onMouseLeave={() => setHoveredProject(null)}
                 className="group relative"
               >
-                <div className="glass-card overflow-hidden cursor-pointer">
-                  {/* Project Image */}
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-80`}
-                    />
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="block h-full"
+                >
+                  <div className="glass-card overflow-hidden cursor-pointer h-full">
+                    {/* Project Image */}
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-80`}
+                      />
 
-                    {/* Placeholder pattern */}
-                    <div className="absolute inset-0 opacity-30">
-                      <div className="w-full h-full grid grid-cols-8 grid-rows-5">
-                        {[...Array(40)].map((_, i) => (
-                          <div key={i} className="border border-white/10" />
+                      {/* Placeholder pattern */}
+                      <div className="absolute inset-0 opacity-30">
+                        <div className="w-full h-full grid grid-cols-8 grid-rows-5">
+                          {[...Array(40)].map((_, i) => (
+                            <div key={i} className="border border-white/10" />
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Project number */}
+                      <div className="absolute top-6 left-6 text-white/20 text-8xl font-bold">
+                        0{project.id}
+                      </div>
+
+                      {/* Hover overlay */}
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{
+                          opacity: hoveredProject === project.id ? 1 : 0,
+                        }}
+                        className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center"
+                      >
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{
+                            scale: hoveredProject === project.id ? 1 : 0,
+                          }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 20,
+                          }}
+                          className="w-20 h-20 rounded-full bg-white flex items-center justify-center"
+                        >
+                          <svg
+                            className="w-8 h-8 text-black"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            />
+                          </svg>
+                        </motion.div>
+                      </motion.div>
+                    </div>
+
+                    {/* Project Info */}
+                    <div className="p-8">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xs font-medium text-indigo-400 uppercase tracking-wider">
+                          {project.category}
+                        </span>
+                      </div>
+
+                      <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-gradient transition-all duration-300">
+                        {project.title}
+                      </h3>
+
+                      <p className="text-neutral-400 mb-6 line-clamp-2">
+                        {project.description}
+                      </p>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-3 py-1 text-xs font-medium text-neutral-300 bg-white/5 rounded-full border border-white/10"
+                          >
+                            {tag}
+                          </span>
                         ))}
                       </div>
                     </div>
-
-                    {/* Project number */}
-                    <div className="absolute top-6 left-6 text-white/20 text-8xl font-bold">
-                      0{project.id}
-                    </div>
-
-                    {/* Hover overlay */}
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{
-                        opacity: hoveredProject === project.id ? 1 : 0,
-                      }}
-                      className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center"
-                    >
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{
-                          scale: hoveredProject === project.id ? 1 : 0,
-                        }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 20,
-                        }}
-                        className="w-20 h-20 rounded-full bg-white flex items-center justify-center"
-                      >
-                        <svg
-                          className="w-8 h-8 text-black"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </motion.div>
-                    </motion.div>
                   </div>
-
-                  {/* Project Info */}
-                  <div className="p-8">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs font-medium text-indigo-400 uppercase tracking-wider">
-                        {project.category}
-                      </span>
-                    </div>
-
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-gradient transition-all duration-300">
-                      {project.title}
-                    </h3>
-
-                    <p className="text-neutral-400 mb-6 line-clamp-2">
-                      {project.description}
-                    </p>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 text-xs font-medium text-neutral-300 bg-white/5 rounded-full border border-white/10"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                </Link>
               </motion.article>
             ))}
           </AnimatePresence>

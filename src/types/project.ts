@@ -7,4 +7,7 @@ export interface Project {
   image: string;
   color: string;
   link?: string;
+  slug: string;
+  githubUrl?: string;
+  liveUrl?: string;
 }

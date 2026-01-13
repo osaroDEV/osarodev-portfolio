@@ -10,6 +10,9 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "AI/ML", "Charts"],
     image: "/projects/dashboard.jpg",
     color: "from-indigo-500 to-purple-600",
+    slug: "ai-dashboard",
+    githubUrl: "https://github.com",
+    liveUrl: "https://example.com",
   },
   {
     id: 2,
@@ -20,6 +23,9 @@ export const projects: Project[] = [
     tags: ["React", "Node.js", "Stripe", "MongoDB"],
     image: "/projects/ecommerce.jpg",
     color: "from-emerald-500 to-teal-600",
+    slug: "ecommerce-platform",
+    githubUrl: "https://github.com",
+    liveUrl: "https://example.com",
   },
   {
     id: 3,
@@ -30,6 +36,9 @@ export const projects: Project[] = [
     tags: ["Three.js", "GSAP", "WebGL", "Framer Motion"],
     image: "/projects/portfolio.jpg",
     color: "from-pink-500 to-rose-600",
+    slug: "creative-portfolio",
+    githubUrl: "https://github.com",
+    liveUrl: "https://example.com",
   },
   {
     id: 4,
@@ -40,6 +49,9 @@ export const projects: Project[] = [
     tags: ["Next.js", "Tailwind", "Animations", "SEO"],
     image: "/projects/saas.jpg",
     color: "from-amber-500 to-orange-600",
+    slug: "saas-landing-page",
+    githubUrl: "https://github.com",
+    liveUrl: "https://example.com",
   },
   {
     id: 5,
@@ -50,6 +62,9 @@ export const projects: Project[] = [
     tags: ["React Native", "TypeScript", "Firebase", "Stripe"],
     image: "/projects/fintech.jpg",
     color: "from-cyan-500 to-blue-600",
+    slug: "fintech-mobile-app",
+    githubUrl: "https://github.com",
+    liveUrl: "https://example.com",
   },
   {
     id: 6,
@@ -60,6 +75,9 @@ export const projects: Project[] = [
     tags: ["Next.js", "Web3", "Solidity", "IPFS"],
     image: "/projects/nft.jpg",
     color: "from-violet-500 to-fuchsia-600",
+    slug: "nft-marketplace",
+    githubUrl: "https://github.com",
+    liveUrl: "https://example.com",
   },
   {
     id: 7,
@@ -70,6 +88,9 @@ export const projects: Project[] = [
     tags: ["React", "Node.js", "MongoDB", "Chart.js"],
     image: "/projects/fitness.jpg",
     color: "from-lime-500 to-green-600",
+    slug: "health-fitness-tracker",
+    githubUrl: "https://github.com",
+    liveUrl: "https://example.com",
   },
   {
     id: 8,
@@ -80,6 +101,9 @@ export const projects: Project[] = [
     tags: ["Next.js", "Prisma", "PostgreSQL", "Stripe"],
     image: "/projects/restaurant.jpg",
     color: "from-red-500 to-orange-600",
+    slug: "restaurant-booking-system",
+    githubUrl: "https://github.com",
+    liveUrl: "https://example.com",
   },
 ];
 
