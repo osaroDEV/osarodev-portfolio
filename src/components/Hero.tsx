@@ -29,7 +29,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
+          className="md:mt-12 mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
         >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -119,7 +119,7 @@ export default function Hero() {
           </motion.a>
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -146,7 +146,7 @@ export default function Hero() {
               />
             </div>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
       {/* Decorative Elements */}
