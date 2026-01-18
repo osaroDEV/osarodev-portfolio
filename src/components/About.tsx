@@ -5,10 +5,10 @@ import Image from "next/image";
 import { useRef } from "react";
 
 const stats = [
-  { number: "3+", label: "Years Experience" },
-  { number: "50+", label: "Projects Completed" },
-  { number: "30+", label: "Happy Clients" },
-  { number: "100%", label: "Success Rate" },
+  { number: "5+", label: "Years Experience" },
+  { number: "10+", label: "Projects Completed" },
+  { number: "10+", label: "Happy Clients" },
+  { number: "90%", label: "Success Rate" },
 ];
 
 const expertise = [

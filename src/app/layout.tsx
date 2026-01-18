@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     "UI/UX",
     "Portfolio",
   ],
+  icons: {
+    icon: "/images/favicon.png",
+    shortcut: "/images/favicon.png",
+    apple: "/images/favicon.png",
+  },
   authors: [{ name: "osaroDEV" }],
   openGraph: {
     title: "osaroDEV | AI Frontend Developer",
