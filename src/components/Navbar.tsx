@@ -53,7 +53,7 @@ export default function Navbar() {
       >
         <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Link href="#home" className="relative group">
+          <Link href="/" className="relative group">
             <motion.span
               className="text-2xl font-bold tracking-tight"
               whileHover={{ scale: 1.05 }}
@@ -63,7 +63,7 @@ export default function Navbar() {
               <span className="text-gradient">DEV</span>
             </motion.span>
             <motion.div
-              className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500"
+              className="absolute -bottom-1 left-0 h-0.5 bg-linear-to-r from-indigo-500 to-purple-500"
               initial={{ width: 0 }}
               whileHover={{ width: "100%" }}
               transition={{ duration: 0.3 }}

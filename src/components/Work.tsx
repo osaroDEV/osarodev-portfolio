@@ -88,9 +88,9 @@ export default function Work() {
                 >
                   <div className="glass-card overflow-hidden cursor-pointer h-full">
                     {/* Project Image */}
-                    <div className="relative aspect-[16/10] overflow-hidden">
+                    <div className="relative aspect-16/10 overflow-hidden">
                       <div
-                        className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-80`}
+                        className={`absolute inset-0 bg-linear-to-br ${project.color} opacity-80`}
                       />
 
                       {/* Placeholder pattern */}

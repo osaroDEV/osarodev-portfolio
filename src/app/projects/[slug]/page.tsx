@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import ProjectHeroImage from "@/components/ProjectHeroImage";
 import { projects } from "@/data/projects";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
@@ -121,7 +122,7 @@ export default async function ProjectPage({ params }: Props) {
             </div>
 
             {/* Project Hero Image */}
-            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden glass-card group">
+            {/* <div className="relative aspect-[16/10] rounded-2xl overflow-hidden glass-card group">
               <div
                 className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-80`}
               />
@@ -135,7 +136,8 @@ export default async function ProjectPage({ params }: Props) {
               <div className="absolute top-6 left-6 text-white/20 text-9xl font-bold">
                 0{project.id}
               </div>
-            </div>
+            </div> */}
+            <ProjectHeroImage image={project.image} />
           </div>
 
           {/* Content Sections - Simulated for now since we only have basic data */}
