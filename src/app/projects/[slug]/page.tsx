@@ -122,25 +122,10 @@ export default async function ProjectPage({ params }: Props) {
             </div>
 
             {/* Project Hero Image */}
-            {/* <div className="relative aspect-[16/10] rounded-2xl overflow-hidden glass-card group">
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-80`}
-              />
-              <div className="absolute inset-0 opacity-30">
-                <div className="w-full h-full grid grid-cols-8 grid-rows-5">
-                  {[...Array(40)].map((_, i) => (
-                    <div key={i} className="border border-white/10" />
-                  ))}
-                </div>
-              </div>
-              <div className="absolute top-6 left-6 text-white/20 text-9xl font-bold">
-                0{project.id}
-              </div>
-            </div> */}
             <ProjectHeroImage image={project.image} />
           </div>
 
-          {/* Content Sections - Simulated for now since we only have basic data */}
+          {/* Content Sections */}
           <div className="grid lg:grid-cols-3 gap-12 border-t border-white/10 pt-20">
             <div className="lg:col-span-1 space-y-8">
               <div>
@@ -167,20 +152,7 @@ export default async function ProjectPage({ params }: Props) {
               <h2 className="text-2xl font-bold text-white">
                 Project Overview
               </h2>
-              <p>
-                This project represents a significant milestone in modern web
-                development, combining state-of-the-art technologies with
-                intuitive user experience design. The goal was to create a
-                solution that not only meets current industry standards but
-                pushes the boundaries of what is possible in a web application.
-              </p>
-              <p>
-                We focused heavily on performance optimization and
-                accessibility, ensuring that the application provides a seamless
-                experience for all users across devices. The interface was
-                designed with a "content-first" approach, allowing the data to
-                tell the story while the UI elements recede into the background.
-              </p>
+              <p>{project.overview}</p>
 
               <div className="grid sm:grid-cols-2 gap-6 mt-8">
                 <div className="p-6 bg-white/5 rounded-xl border border-white/10">
@@ -188,8 +160,7 @@ export default async function ProjectPage({ params }: Props) {
                     Challenge
                   </h4>
                   <p className="text-sm text-neutral-400">
-                    Overcoming complex data visualization requirements while
-                    maintaining 60fps performance on mobile devices.
+                    {project.challenge}
                   </p>
                 </div>
                 <div className="p-6 bg-white/5 rounded-xl border border-white/10">
@@ -197,8 +168,7 @@ export default async function ProjectPage({ params }: Props) {
                     Solution
                   </h4>
                   <p className="text-sm text-neutral-400">
-                    Implemented WebGL-based rendering and virtualized lists to
-                    handle large datasets efficiently.
+                    {project.solution}
                   </p>
                 </div>
               </div>
