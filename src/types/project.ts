@@ -10,5 +10,7 @@ export interface Project {
   slug: string;
   githubUrl?: string;
   liveUrl?: string;
-  client?: string;
+  overview?: string;
+  challenge?: string;
+  solution?: string;
 }
