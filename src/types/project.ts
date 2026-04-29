@@ -13,4 +13,8 @@ export interface Project {
   overview?: string;
   challenge?: string;
   solution?: string;
+  mockups?: {
+    laptop?: string;
+    mobile?: string;
+  };
 }

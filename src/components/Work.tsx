@@ -88,19 +88,32 @@ export default function Work() {
                 >
                   <div className="glass-card overflow-hidden cursor-pointer h-full">
                     {/* Project Image */}
-                    <div className="relative aspect-16/10 overflow-hidden">
-                      <div
-                        className={`absolute inset-0 bg-linear-to-br ${project.color} opacity-80`}
-                      />
-
-                      {/* Placeholder pattern */}
-                      <div className="absolute inset-0 opacity-30">
-                        <div className="w-full h-full grid grid-cols-8 grid-rows-5">
-                          {[...Array(40)].map((_, i) => (
-                            <div key={i} className="border border-white/10" />
-                          ))}
-                        </div>
-                      </div>
+                    <div className="relative aspect-16/10 overflow-hidden bg-neutral-900">
+                      {project.mockups?.laptop ? (
+                        <div
+                          className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
+                          style={{
+                            backgroundImage: `url(${project.mockups.laptop})`,
+                          }}
+                        />
+                      ) : (
+                        <>
+                          <div
+                            className={`absolute inset-0 bg-linear-to-br ${project.color} opacity-80`}
+                          />
+                          {/* Placeholder pattern */}
+                          <div className="absolute inset-0 opacity-30">
+                            <div className="w-full h-full grid grid-cols-8 grid-rows-5">
+                              {[...Array(40)].map((_, i) => (
+                                <div
+                                  key={i}
+                                  className="border border-white/10"
+                                />
+                              ))}
+                            </div>
+                          </div>
+                        </>
+                      )}
 
                       {/* Project number */}
                       <div className="absolute top-6 left-6 text-white/20 text-8xl font-bold">

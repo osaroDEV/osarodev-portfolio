@@ -124,98 +124,116 @@ export default function ProjectsPage() {
                 onMouseLeave={() => setHoveredProject(null)}
                 className="group relative"
               >
-                <div className="glass-card overflow-hidden cursor-pointer h-full">
-                  {/* Project Image */}
-                  <div className="relative aspect-16/10 overflow-hidden">
-                    <div
-                      className={`absolute inset-0 bg-linear-to-br opacity-80`}
-                    />
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="block h-full"
+                >
+                  <div className="glass-card overflow-hidden cursor-pointer h-full">
+                    {/* Project Image */}
+                    <div className="relative aspect-16/10 overflow-hidden bg-neutral-900">
+                      {project.mockups?.laptop ? (
+                        <div
+                          className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
+                          style={{
+                            backgroundImage: `url(${project.mockups.laptop})`,
+                          }}
+                        />
+                      ) : (
+                        <>
+                          <div
+                            className={`absolute inset-0 bg-linear-to-br opacity-80`}
+                          />
+                          {/* Placeholder pattern */}
+                          <div className="absolute inset-0 opacity-30">
+                            <div className="w-full h-full grid grid-cols-8 grid-rows-5">
+                              {[...Array(40)].map((_, i) => (
+                                <div
+                                  key={i}
+                                  className="border border-white/10"
+                                />
+                              ))}
+                            </div>
+                          </div>
+                        </>
+                      )}
 
-                    {/* Placeholder pattern */}
-                    <div className="absolute inset-0 opacity-30">
-                      <div className="w-full h-full grid grid-cols-8 grid-rows-5">
-                        {[...Array(40)].map((_, i) => (
-                          <div key={i} className="border border-white/10" />
+                      {/* Project number */}
+                      <div className="absolute top-6 left-6 text-white/20 text-6xl font-bold">
+                        {project.id.toString().padStart(2, "0")}
+                      </div>
+
+                      {/* Hover overlay */}
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{
+                          opacity: hoveredProject === project.id ? 1 : 0,
+                        }}
+                        className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center"
+                      >
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{
+                            scale: hoveredProject === project.id ? 1 : 0,
+                          }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 20,
+                          }}
+                          className="w-16 h-16 rounded-full bg-white flex items-center justify-center"
+                        >
+                          <svg
+                            className="w-6 h-6 text-black"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            />
+                          </svg>
+                        </motion.div>
+                      </motion.div>
+                    </div>
+
+                    {/* Project Info */}
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xs font-medium text-indigo-400 uppercase tracking-wider">
+                          {project.category}
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gradient transition-all duration-300">
+                        {project.title}
+                      </h3>
+
+                      <p className="text-neutral-400 text-sm mb-5 line-clamp-2">
+                        {project.description}
+                      </p>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.slice(0, 3).map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2.5 py-1 text-xs font-medium text-neutral-300 bg-white/5 rounded-full border border-white/10"
+                          >
+                            {tag}
+                          </span>
                         ))}
+                        {project.tags.length > 3 && (
+                          <span className="px-2.5 py-1 text-xs font-medium text-neutral-500 bg-white/5 rounded-full border border-white/10">
+                            +{project.tags.length - 3}
+                          </span>
+                        )}
                       </div>
                     </div>
-
-                    {/* Project number */}
-                    <div className="absolute top-6 left-6 text-white/20 text-6xl font-bold">
-                      {project.id.toString().padStart(2, "0")}
-                    </div>
-
-                    {/* Hover overlay */}
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{
-                        opacity: hoveredProject === project.id ? 1 : 0,
-                      }}
-                      className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center"
-                    >
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{
-                          scale: hoveredProject === project.id ? 1 : 0,
-                        }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 20,
-                        }}
-                        className="w-16 h-16 rounded-full bg-white flex items-center justify-center"
-                      >
-                        <svg
-                          className="w-6 h-6 text-black"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </motion.div>
-                    </motion.div>
                   </div>
-
-                  {/* Project Info */}
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs font-medium text-indigo-400 uppercase tracking-wider">
-                        {project.category}
-                      </span>
-                    </div>
-
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gradient transition-all duration-300">
-                      {project.title}
-                    </h3>
-
-                    <p className="text-neutral-400 text-sm mb-5 line-clamp-2">
-                      {project.description}
-                    </p>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.slice(0, 3).map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2.5 py-1 text-xs font-medium text-neutral-300 bg-white/5 rounded-full border border-white/10"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                      {project.tags.length > 3 && (
-                        <span className="px-2.5 py-1 text-xs font-medium text-neutral-500 bg-white/5 rounded-full border border-white/10">
-                          +{project.tags.length - 3}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
+                </Link>
               </motion.article>
             ))}
           </AnimatePresence>

@@ -175,6 +175,51 @@ export default async function ProjectPage({ params }: Props) {
             </div>
           </div>
 
+          {/* Mockups Section */}
+          {project.mockups && (
+            <div className="mt-32 space-y-32">
+              {project.mockups.laptop && (
+                <div className="relative animate-fade-in-up">
+                  <div className="absolute inset-0 bg-indigo-500/10 blur-3xl rounded-full" />
+                  <div className="relative glass-card rounded-2xl overflow-hidden border border-white/10 shadow-2xl overflow-hidden">
+                    <img
+                      src={project.mockups.laptop}
+                      alt={`${project.title} Laptop Mockup`}
+                      className="w-full h-auto block transform hover:scale-[1.02] transition-transform duration-700"
+                    />
+                  </div>
+                </div>
+              )}
+
+              {project.mockups.mobile && (
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                  <div className="space-y-6">
+                    <h2 className="text-3xl font-bold text-white tracking-tight">
+                      Mobile Experience
+                    </h2>
+                    <p className="text-lg text-neutral-400 leading-relaxed max-w-md">
+                      Fully responsive design optimized for a seamless experience
+                      across all mobile devices, ensuring your brand looks perfect
+                      on every screen.
+                    </p>
+                  </div>
+                  <div className="relative max-w-[320px] mx-auto lg:ml-auto">
+                    <div className="absolute inset-0 bg-indigo-500/20 blur-3xl rounded-full" />
+                    <div className="relative glass-card rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl p-2 bg-neutral-900/50 backdrop-blur-xl">
+                      <div className="rounded-[2.5rem] overflow-hidden border border-white/5 bg-black">
+                        <img
+                          src={project.mockups.mobile}
+                          alt={`${project.title} Mobile Mockup`}
+                          className="w-full h-auto block"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Next Project Teaser */}
           <div className="mt-32 pt-20 border-t border-white/10 flex justify-between items-center group">
             <div className="text-left">

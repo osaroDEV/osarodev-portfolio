@@ -513,6 +513,21 @@ body {
   transition: all 0.8s var(--ease-out-expo);
 }
 
+.animate-fade-in-up {
+  animation: fade-in-up 1s var(--ease-out-expo) forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ============================================
    Stagger Animation Delays
    ============================================ */

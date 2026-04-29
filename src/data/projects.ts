@@ -19,6 +19,10 @@ export const projects: Project[] = [
       "Building a professional legal services platform that balances trustworthiness with modern design sensibilities, while enabling non-technical staff to manage comprehensive legal content across multiple practice areas without compromising site performance or accessibility standards.",
     solution:
       "Implemented a headless CMS architecture using Sanity.io coupled with Next.js and TypeScript, creating a separation between content management and presentation. This approach allows legal professionals to update services, team information, and legal resources through an intuitive CMS interface while maintaining strict performance budgets and WCAG accessibility compliance through a carefully optimized frontend architecture.",
+    mockups: {
+      laptop: "/projects/michael-stevens-solicitors/laptop-mockup.png",
+      mobile: "/projects/michael-stevens-solicitors/mobile-mockup.png",
+    },
   },
   {
     id: 2,
@@ -31,32 +35,40 @@ export const projects: Project[] = [
     color: "from-emerald-500 to-teal-600",
     slug: "ritzy-healthcare",
     githubUrl: "https://github.com/osaroDEV/r-healthcare",
-    liveUrl: "https://r-healthcare.vercel.app",
+    liveUrl: "https://ritzyhealthcare.co.uk",
     overview:
       "Ritzy Healthcare is a patient-centric healthcare platform designed to bridge the gap between healthcare providers and individuals seeking compassionate home care services. The project demonstrates how modern web technologies can create accessible, trustworthy interfaces for sensitive healthcare interactions. The primary goal was to build a platform that prioritizes clarity and user confidence. Healthcare decisions are deeply personal, and the interface needed to communicate professionalism while maintaining warmth and approachability. The site features comprehensive service descriptions, transparent care options, and streamlined contact pathways that reduce friction for families seeking care solutions. Built with Next.js and TypeScript, the application emphasizes performance optimization to ensure fast load times even on slower connections—critical for users who may be accessing the site during stressful situations. The responsive design ensures seamless experiences across devices, recognizing that healthcare decisions often happen on mobile devices during hospital visits or while coordinating with family members. Accessibility was treated as non-negotiable. Every component follows WCAG guidelines, with careful attention to color contrast, keyboard navigation, and screen reader compatibility. The content architecture uses clear, jargon-free language that respects users' emotional state while providing the detailed information necessary to make informed care decisions.",
     challenge:
       "Creating a healthcare services platform that balances regulatory compliance requirements with emotional accessibility, while presenting complex care options in a way that empowers families to make confident decisions without overwhelming them with information or creating barriers to contact.",
     solution:
       "Developed a component-based architecture using React and Next.js that organizes services into digestible categories with clear visual hierarchies. Implemented strategic content chunking, progressive disclosure patterns, and multiple contact pathways to accommodate different user comfort levels and urgency states, while maintaining strict performance budgets and accessibility standards throughout the entire user journey.",
+    mockups: {
+      laptop: "/projects/ritzy-healthcare/laptop-mockup.png",
+      mobile: "/projects/ritzy-healthcare/mobile-mockup.png",
+    },
   },
   {
     id: 3,
-    title: "Creative Portfolio",
+    title: "Agency Portfolio",
     description:
       "Award-winning portfolio website featuring immersive 3D experiences and stunning animations.",
     category: "Portfolio",
     tags: ["Three.js", "GSAP", "WebGL", "Framer Motion"],
-    image: "/projects/portfolio.jpg",
+    image: "/projects/agency-portfolio/hero.png",
     color: "from-pink-500 to-rose-600",
-    slug: "creative-portfolio",
+    slug: "agency-portfolio",
     githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    liveUrl: "https://codeillustrated.com/labs",
     overview:
       "Code Illustrated Studio is a comprehensive digital agency platform built to showcase modern web development capabilities while serving as a functional business website. The project demonstrates how design studios can effectively communicate their value proposition through carefully crafted digital experiences that balance aesthetics with performance.The primary goal was to create a platform that not only presents the studio's portfolio and services but also serves as a living example of the quality clients can expect. Every interaction, animation, and layout decision reinforces the studio's commitment to craftsmanship and attention to detail. The site architecture allows for easy content updates while maintaining design consistency across all pages.Built with Next.js and TypeScript, the platform prioritizes performance without sacrificing visual impact. The responsive design system ensures the portfolio looks exceptional across all devices, recognizing that potential clients often browse agencywebsites on mobile devices during their research phase. Strategic use of animations and micro-interactions creates memorable moments without compromising load times or accessibility.The content architecture follows a narrative structure that guides visitors from initial awareness through the studio's capabilities, past work, and ultimately to conversion. Clear calls-to-action are strategically placed throughout the journey, while testimonials and metrics build credibility. The platform demonstrates that business websites can be both functionally effective and visually distinctive, avoiding generic templates in favor of a unique digital identity that reflects the studio's design philosophy.",
     challenge:
       "Creating a digital agency portfolio that stands out in a saturated market while maintaining fast performance, clear communication of services, and seamless user experience across devices. The platform needed to serve multiple audiences—potential clients evaluating capabilities, existing clients accessing resources, and industry peers assessing design quality—without diluting its core message or compromising on technical excellence.",
     solution:
       "Developed a component-driven architecture using Next.js and TypeScript that separates content from presentation, enabling rapid updates while maintaining design consistency. Implemented performance optimization strategies including image optimization, code splitting, and strategic lazy loading to achieve sub-2-second load times. Created a modular design system with reusable components that scale across different content types, ensuring visual cohesion while allowing flexibility for future growth and content expansion.",
+    mockups: {
+      laptop: "/projects/agency-portfolio/laptop-mockup.png",
+      mobile: "/projects/agency-portfolio/mobile-mockup.png",
+    },
   },
   {
     id: 4,
@@ -76,6 +88,10 @@ export const projects: Project[] = [
       "Designing an educational platform that makes programming accessible to complete beginners while maintaining engagement through multiple learning sessions. The challenge included creating interactive coding exercises that provide meaningful feedback, structuring curriculum progression that prevents learners from feeling overwhelmed, and building a responsive interface that works equally well on desktop and mobile devices where learners might practice on-the-go.",
     solution:
       "Implemented an interactive learning environment using Next.js with integrated code editors that provide real-time syntax highlighting and validation. Created a modular curriculum structure with bite-sized lessons, practical exercises, and immediate visual feedback loops that demonstrate the relationship between code and output. Developed a responsive component architecture with Tailwind CSS that ensures consistent learning experiences across devices, while incorporating progress tracking and achievement systems to maintain learner motivation throughout their educational journey.",
+    mockups: {
+      laptop: "/projects/coding-tutor/laptop-mockup.png",
+      mobile: "/projects/coding-tutor/mobile-mockup.png",
+    },
   },
 ];
 
